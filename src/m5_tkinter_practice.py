@@ -37,7 +37,7 @@ def main():
     # -------------------------------------------------------------------------
     button1['command'] = (lambda: print('Hello'))
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # Done: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -46,11 +46,19 @@ def main():
     # -------------------------------------------------------------------------
     ze_box = ttk.Entry(frame1)
     ze_box.grid()
+
+    print_entry_button = ttk.Button(frame1, text='Print entry')
+    print_entry_button['command'] = (lambda: print_contents(ze_box))
+    print_entry_button.grid()
+
+
+
     window.mainloop()
 
 def print_contents(ze_box):
 
     contents = ze_box.get()
+    print(contents)
 
     # -------------------------------------------------------------------------
     # TODO: 7.
